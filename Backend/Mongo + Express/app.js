@@ -21,7 +21,14 @@ app.use((req, res, next) => {
 
 // http://localhost:8100/api
 
-// '/' GET
+app.get('/', (req, res) => {
+    res.json({
+        status: 'OK',
+        message: 'Welcome to the Hotel API. Use /api/health or /api/* routes.'
+    })
+})
+
+// '/api/health' GET
 app.get('/api/health', (req, res) => {
     res.json({
         status: "OK",
